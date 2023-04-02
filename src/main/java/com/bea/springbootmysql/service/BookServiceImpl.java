@@ -1,7 +1,6 @@
 package com.bea.springbootmysql.service;
 
 import com.bea.springbootmysql.domain.Book;
-import com.bea.springbootmysql.domain.Genres;
 import com.bea.springbootmysql.domain.exception.BookNotFoundException;
 import com.bea.springbootmysql.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,22 +32,22 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book findBook(int stock) {
-        return null;
-    }
-
-    @Override
     public List<Book> findBooks() {
-        return null;
+        return bookRepository.findAll();
     }
 
     @Override
-    public Book updateBook(Long id, String name, String isbn, Genres genres, int stock) {
-        return null;
+    public Book updateBookStock(Long id, int stock) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException(id + " Book Not Found"));
+        book.changeStock(stock);
+
+        bookRepository.save(book);
+        return book;
     }
 
     @Override
     public void deleteBook(Long id) {
-
+        bookRepository.deleteById(id);
     }
 }

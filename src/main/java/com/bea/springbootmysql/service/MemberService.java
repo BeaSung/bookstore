@@ -11,10 +11,11 @@ public interface MemberService {
 
     Member findMember(Long memberId);
 
-    Member findMember(String memberName);
+    List<Member> findMembers(String memberName);
 
     List<Member> findMembers(Grade memberGrade);
 
     List<Member> findMembers();
 
+    Member changeNickname(Long memberId, String memberNickname);
 }

@@ -1,7 +1,6 @@
 package com.bea.springbootmysql.service;
 
 import com.bea.springbootmysql.domain.Book;
-import com.bea.springbootmysql.domain.Genres;
 
 import java.util.List;
 
@@ -13,11 +12,9 @@ public interface BookService {
 
     Book findBook(String bookName);
 
-    Book findBook(int stock);
-
     List<Book> findBooks();
 
-    Book updateBook(Long id, String name, String isbn, Genres genres, int stock);
+    Book updateBookStock(Long id, int stock);
 
     void deleteBook(Long id);
 }

@@ -2,13 +2,16 @@ package com.bea.springbootmysql.repository;
 
 import com.bea.springbootmysql.domain.Grade;
 import com.bea.springbootmysql.domain.Member;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.ListCrudRepository;
 
+import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository extends CrudRepository<Member, Long> {
+public interface MemberRepository extends ListCrudRepository<Member, Long> {
 
-    Optional<Member> findByName(String name);
+    List<Member> findByName(String name);
 
-    Optional<Member> findByGrade(Grade grade);
+    List<Member> findByGrade(Grade grade);
+
+    Optional<Member> findByNickname(String nickname);
 }

@@ -6,5 +6,6 @@ public enum Genres {
     ROMANCE,
     COOKBOOK,
     HEALTH,
-    TRAVEL
+    TRAVEL,
+    NONE,
 }
