@@ -17,12 +17,14 @@ public class Book {
     private String name;
     private String isbn;
     private Genres genres;
+    private int price;
     private int stock;
 
-    public Book(String name, String isbn, Genres genres, int stock) {
+    public Book(String name, String isbn, Genres genres, int price, int stock) {
         this.name = name;
         this.isbn = isbn;
         this.genres = genres;
+        this.price = price;
         this.stock = stock;
     }
 

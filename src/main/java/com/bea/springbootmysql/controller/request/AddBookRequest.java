@@ -9,9 +9,10 @@ public class AddBookRequest {
     private String name;
     private String isbn;
     private Genres genres;
+    private int price;
     private int stock;
 
     public Book convertToBook() {
-        return new Book(name, isbn, genres, stock);
+        return new Book(name, isbn, genres, price, stock);
     }
 }

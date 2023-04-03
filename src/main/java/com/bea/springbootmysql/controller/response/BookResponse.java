@@ -11,6 +11,7 @@ public class BookResponse {
     private final String name;
     private final String isbn;
     private final Genres genres;
+    private final int price;
     private final int stock;
 
     public BookResponse(Book book) {
@@ -18,6 +19,7 @@ public class BookResponse {
         this.name = book.getName();
         this.isbn = book.getIsbn();
         this.genres = book.getGenres();
+        this.price = book.getPrice();
         this.stock = book.getStock();
     }
 }
