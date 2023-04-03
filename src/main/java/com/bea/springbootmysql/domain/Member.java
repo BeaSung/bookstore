@@ -28,7 +28,7 @@ public class Member {
         this.grade = grade;
     }
 
-    public boolean isVip() {
+    public boolean isVIP() {
         return grade == Grade.VIP;
     }
 

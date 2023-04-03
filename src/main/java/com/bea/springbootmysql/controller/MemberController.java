@@ -1,6 +1,6 @@
 package com.bea.springbootmysql.controller;
 
-import com.bea.springbootmysql.controller.request.AddMemberRequest;
+import com.bea.springbootmysql.controller.request.SignUpRequest;
 import com.bea.springbootmysql.controller.request.UpdateNicknameRequest;
 import com.bea.springbootmysql.controller.response.MemberResponse;
 import com.bea.springbootmysql.domain.Grade;
@@ -49,7 +49,7 @@ public class MemberController {
     }
 
     @PostMapping
-    public void addMember(@RequestBody AddMemberRequest request) {
+    public void signUp(@RequestBody SignUpRequest request) {
         Member member = request.convertToMember();
         memberService.signUp(member);
     }

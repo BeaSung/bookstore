@@ -5,7 +5,7 @@ import com.bea.springbootmysql.domain.Member;
 import lombok.Data;
 
 @Data
-public class AddMemberRequest {
+public class SignUpRequest {
 
     private String nickname;
     private String address;
