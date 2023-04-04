@@ -17,5 +17,5 @@ public interface MemberService {
 
     List<Member> findMembers();
 
-    Member changeNickname(Long memberId, String memberNickname);
+    void changeNickname(Long memberId, String memberNickname);
 }

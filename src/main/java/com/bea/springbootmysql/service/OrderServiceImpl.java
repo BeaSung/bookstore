@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -17,11 +19,17 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     @Override
-    public Order createOrder(Long memberId, Long bookId) {
+    public void order(Long memberId, Long bookId) {
         Book book = bookService.findBook(bookId);
         int discountAmount = discountPolicy.getDiscountAmount(memberId);
 
         Order order = new Order(memberId, bookId, book.getPrice(), discountAmount);
-        return orderRepository.save(order);
+        orderRepository.save(order);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Order> findOrders(Long memberId) {
+        return orderRepository.findAllById(memberId);
     }
 }

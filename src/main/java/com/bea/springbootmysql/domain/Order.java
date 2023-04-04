@@ -2,6 +2,7 @@ package com.bea.springbootmysql.domain;
 
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
@@ -9,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table(name="orders")
 public class Order {
 
+    @Id
     private Long id;
     private Long memberId;
     private Long bookId;

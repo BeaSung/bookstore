@@ -6,10 +6,9 @@ import org.springframework.data.relational.core.mapping.Table;
 
 // domain class 는 비즈니스 로직이 담기는 클래스 -> 비즈니스 로직은 요구사항에 따라 변경되고 업데이트 될 수 있는 것들
 @Getter
-@Setter
-@AllArgsConstructor
+@ToString
 @NoArgsConstructor
-@Table(name="book")
+@Table(name="books")
 public class Book {
 
     @Id

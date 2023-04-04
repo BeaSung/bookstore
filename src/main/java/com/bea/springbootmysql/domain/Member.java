@@ -1,17 +1,15 @@
 package com.bea.springbootmysql.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
-@Setter
-@AllArgsConstructor
+@ToString
 @NoArgsConstructor
-@Table(name="member")
+@Table(name="members")
 public class Member {
 
     @Id

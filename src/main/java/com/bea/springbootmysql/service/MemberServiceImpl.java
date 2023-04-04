@@ -52,13 +52,13 @@ public class MemberServiceImpl implements MemberService {
 
     @Transactional
     @Override
-    public Member changeNickname(Long memberId, String memberNickname) {
+    public void changeNickname(Long memberId, String memberNickname) {
         validateDuplicatedNickname(memberNickname);
         Member member = memberRepository.findById(memberId)
                 .orElseThrow(() -> new MemberNotFoundException(memberId + " Member Not Found"));
 
         member.changeNickname(memberNickname);
-        return memberRepository.save(member);
+        memberRepository.save(member);
     }
 
     private void validateDuplicatedNickname(String nickname) {
